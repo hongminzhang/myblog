@@ -47,6 +47,8 @@ $config = [
         ],
         */
     ],
+    //设置默认的控制器和动作
+    'defaultRoute' => 'index/index',
     'params' => $params,
 ];
 
