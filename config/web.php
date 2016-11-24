@@ -7,6 +7,7 @@ $config = [
     'basePath' => dirname(__DIR__),
     //bootstrap中制定了启动时需要运行的组件
     'bootstrap' => ['log'],
+    //注册应用组件，应用组件只会在第一次访问时实例化， 如果处理请求过程没有访问的话就不实例化
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -60,7 +61,13 @@ $config = [
     'defaultRoute' => 'index/index',
     //指定给终端用户的语言
     'language' => 'en-US',
-    //模块
+    //模块,模块的作用很大，可以将如用户管理，评论管理，可以开发成模块， 这样在相关项目中非常容易被重用。
+    'modules' => [
+        'forum' => [
+            'class' => 'app\modules\forum\Module',
+            // ... 模块其他配置 ...
+        ],
+    ],
     //包括全局访问的参数，是一个数组
     'params' => $params,
     //时区
