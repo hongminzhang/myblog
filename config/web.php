@@ -5,6 +5,7 @@ $params = require(__DIR__ . '/params.php');
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
+    //bootstrap中制定了启动时需要运行的组件
     'bootstrap' => ['log'],
     'components' => [
         'request' => [
@@ -49,6 +50,16 @@ $config = [
     ],
     //设置默认的控制器和动作
     'defaultRoute' => 'index/index',
+    //作用是指定controllerId到特定的控制器类
+    'controllerMap' => [
+        [
+            'account' => 'app\controllers\UserController',
+            'article' => [
+                'class' => 'app\controllers\PostController',
+                'enableCsrfValidation' => false,
+            ],
+        ],
+    ],
     'params' => $params,
 ];
 
