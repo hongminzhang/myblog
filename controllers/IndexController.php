@@ -16,7 +16,8 @@ class IndexController extends Controller
 
     public function actionIndex($message = 'Hello')
     {
-        return $this->render('index', ['message' => $message]);
+        echo 'test';
+//        return $this->render('index', ['message' => $message]);
     }
 
     public function actionEntry()

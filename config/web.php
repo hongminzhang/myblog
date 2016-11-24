@@ -48,19 +48,53 @@ $config = [
         ],
         */
     ],
-    //设置默认的控制器和动作
+    //作用是指定controllerId到特定的控制器类(目前作用不大)
+//    'controllerMap' => [
+//            'account' => 'app\controllers\IndexController',
+//            'article' => [
+//                'class' => 'app\controllers\PostController',
+//                'enableCsrfValidation' => false,
+//            ],
+//    ],
+    //设置默认的控制器和动作 help, post/create 模块，控制器/动作
     'defaultRoute' => 'index/index',
-    //作用是指定controllerId到特定的控制器类
-    'controllerMap' => [
-        [
-            'account' => 'app\controllers\UserController',
-            'article' => [
-                'class' => 'app\controllers\PostController',
-                'enableCsrfValidation' => false,
-            ],
-        ],
-    ],
+    //指定给终端用户的语言
+    'language' => 'en-US',
+    //模块
+    //包括全局访问的参数，是一个数组
     'params' => $params,
+    //时区
+    'timeZone' => 'Asia/Shanghai',
+    //编码(默认不用修改)
+//    'charset' => 'UTF-8',
+    //默认使用的布局名字(默认不用修改)
+//    'layouts' => 'main',
+//    'layoutPath' => '@app/views/layouts',
+//    'runtimePath' => '@app/runtime',
+//    'vendorPath' => '@app/views',
+
+    //事件
+//    'on beforeInsert' => '类名'
+//发送请求之前
+//    'on beforeRequest' => function ($event) {
+//        // ...
+//    },
+//发送请求之后
+//    'on afterRequest' => function ($event) {
+//        // ...
+//    },
+//执行动作之前
+//    'on beforeAction' => function ($event) {
+//
+//    },
+//执行动作之后
+//    'on afterAction' => function ($event) {
+//        if (some condition) {
+//            // 修改 $event->result
+//        } else {
+//        }
+//    },
+    //行为
 ];
 
 if (YII_ENV_DEV) {
